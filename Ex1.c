@@ -70,14 +70,20 @@ void printNums(node_t* head){
 
 double* listToArr(node_t* head, int* size){
 	double* output;
-	node_t* root = head;
+	node_t* root = head; //list needs to be traversed twice, so the head pointer is cloned
 	int count = 0;
 	*size = 0;
+	
+	//Ideally you would only traverse the list once, but I can't think of a better way of getting the size to initialize the array
 	while (head != NULL){
 		(*size)++;
 		head = head->next;
 	}
+	
+	//Create array after getting its size
 	output = (double*)malloc(*size * sizeof(double));
+	
+	//traverse list and put values into array
 	while (root != NULL && count < *size){
 		output[count] = root->data;
 		root = root->next;
