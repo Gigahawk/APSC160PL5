@@ -3,6 +3,8 @@
 #include <ctype.h>
 #include "ArrayTools.h"
 
+#define INPUTBUFFER 100
+
 int isZero(char* input){
 	int i = 0;
 	int check = 0;
@@ -19,12 +21,12 @@ int isZero(char* input){
 
 node_t* getNums(void){
 	double d;
-	char* input = (char*)malloc(100 * sizeof(char));
+	char* input = (char*)malloc(INPUTBUFFER * sizeof(char));
 	node_t* head = NULL;
 	node_t* temp = NULL;
 
 	printf("Please enter a number to add to the list or Ctrl+Z to end: ");
-	while (fgets(input, 100, stdin) != NULL){
+	while (fgets(input, INPUTBUFFER, stdin) != NULL){
 
 		if (isZero(input) != 0){
 			printf("I didn't understand that input, please try again: ");
