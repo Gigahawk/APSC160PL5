@@ -1,3 +1,1 @@
-PreLab 5 thing for APSC160
-
-Using linked lists and arrays for the same thing, because apparently pointers are hard.
+Library to generate an arbitrary array from user input
